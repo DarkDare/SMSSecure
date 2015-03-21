@@ -10,6 +10,7 @@ import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.method.LinkMovementMethod;
 import android.text.style.ClickableSpan;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -142,8 +143,10 @@ public class ConfirmIdentityDialog extends AlertDialog {
 
             Recipients recipients = mmsAddressDatabase.getRecipientsForId(messageRecord.getId());
 
-            if (recipients.isGroupRecipient()) MessageSender.resendGroupMessage(getContext(), masterSecret, messageRecord, mismatch.getRecipientId());
-            else                               MessageSender.resend(getContext(), masterSecret, messageRecord);
+            if (recipients.isGroupRecipient())
+              Log.w(TAG, "TODO: Push servce disabled");
+            else
+              MessageSender.resend(getContext(), masterSecret, messageRecord);
           } else {
             smsDatabase.removeMismatchedIdentity(messageRecord.getId(),
                                                  mismatch.getRecipientId(),

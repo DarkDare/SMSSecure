@@ -21,6 +21,7 @@ import android.os.AsyncTask;
 import android.os.Handler;
 import android.text.TextUtils;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -183,7 +184,7 @@ public class MessageRecipientListItem extends RelativeLayout
       mmsDatabase.removeFailure(record.getId(), failure);
 
       if (record.getRecipients().isGroupRecipient()) {
-        MessageSender.resendGroupMessage(getContext(), masterSecret, record, failure.getRecipientId());
+         Log.w(TAG, "TODO: Push servce disabled");
       } else {
         MessageSender.resend(getContext(), masterSecret, record);
       }
