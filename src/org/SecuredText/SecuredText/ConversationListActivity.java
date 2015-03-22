@@ -34,7 +34,6 @@ import org.SecuredText.SecuredText.database.DatabaseFactory;
 import org.SecuredText.SecuredText.notifications.MessageNotifier;
 import org.SecuredText.SecuredText.recipients.RecipientFactory;
 import org.SecuredText.SecuredText.recipients.Recipients;
-import org.SecuredText.SecuredText.service.DirectoryRefreshListener;
 import org.SecuredText.SecuredText.service.KeyCachingService;
 import org.SecuredText.SecuredText.util.DynamicLanguage;
 import org.SecuredText.SecuredText.util.DynamicTheme;
@@ -66,8 +65,6 @@ public class ConversationListActivity extends PassphraseRequiredActionBarActivit
 
     initializeResources();
     initializeContactUpdatesReceiver();
-
-    DirectoryRefreshListener.schedule(this);
   }
 
   @Override
